@@ -1,0 +1,11 @@
+ARG NODE_VERSION=18
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0.204-${NODE_VERSION}-bullseye
+# fix npm: https://stackoverflow.com/a/77024158/433785
+RUN  npm install -g npm@9 \
+    npm install -g @devcontainers/cli \
+    # Nice to have node dependency updater
+    npm install -g npm-check-updates && \
+    # Nice command aliases
+    echo "alias grep='grep --color=auto'" >> /etc/bash.bashrc && \
+    echo "alias ls='ls --color=auto'" >> /etc/bash.bashrc
+USER node
