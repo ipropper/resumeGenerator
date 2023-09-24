@@ -3,11 +3,11 @@ import {
   getDeepContenBlocksCopy,
 } from "./contentBlocks";
 
-export const scanJobDescription = (resume: string) => {
+export const scanJobDescription = (jobDescription: string) => {
   const copy = getDeepContenBlocksCopy();
   const finalContent: StructuredContentBlock[] = [];
   const detectedKeywords: string[] = [];
-  resume.split("").forEach((word) => {
+  jobDescription.split(" ").forEach((word) => {
     const formattedWord = word.toLocaleLowerCase();
     // keywords can be more than 1 word
     const hasResult = copy.findIndex((b) => b.keywordSet.has(formattedWord));
