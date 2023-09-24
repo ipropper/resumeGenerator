@@ -1,0 +1,14 @@
+= Resume Generator
+
+The goal of this app is to help you tailor your resume to each job posting instantaneously.
+
+== Steps To Build
+. create content blocks of content I want to fill in my resume
+. Each content block must have the following structure
+.. keywords
+.. company associated with
+.. content-short
+.. content-long
+. Algorithim
+.. scan a document for all the keywords in it
+.. grab keywords any role can have max 4 bullets
