@@ -2,13 +2,14 @@
 
 The goal of this app is to help you tailor your resume to each job posting instantaneously.
 
-== Steps To Build
-. create content blocks of content I want to fill in my resume
-. Each content block must have the following structure
-.. keywords
-.. company associated with
-.. content-short
-.. content-long
-. Algorithim
-.. scan a document for all the keywords in it
-.. grab keywords any role can have max 4 bullets
+== Features
+
+=== Keyword Scan
+
+- keyword scan uses an AI agent to scan a job description for the top keywords
+- I then use a tri to search your supplied resume for those key words and identify what you're missing
+
+=== Identify Insigts For The Role
+
+- Identify key info about the company that seem important
+

@@ -7,15 +7,17 @@ export const scanJobDescription = (jobDescription: string) => {
   const copy = getDeepContenBlocksCopy();
   const finalContent: StructuredContentBlock[] = [];
   const detectedKeywords: string[] = [];
-  jobDescription.split(" ").forEach((word) => {
-    const formattedWord = word.toLocaleLowerCase();
-    // keywords can be more than 1 word
-    const hasResult = copy.findIndex((b) => b.keywordSet.has(formattedWord));
-    if (hasResult !== -1) {
-      finalContent.push(copy[hasResult]);
-      detectedKeywords.push(word);
-      copy.splice(hasResult, 1);
-    }
-  });
+  jobDescription
+    .toLocaleLowerCase()
+    .split(" ")
+    .forEach((word) => {
+      // keywords can be more than 1 word
+      const hasResult = copy.findIndex((b) => b.keywordSet.has(word));
+      if (hasResult !== -1) {
+        finalContent.push(copy[hasResult]);
+        detectedKeywords.push(word);
+        copy.splice(hasResult, 1);
+      }
+    });
   return { detectedKeywords, finalContent };
 };
